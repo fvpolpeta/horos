@@ -1,16 +1,35 @@
 /*=========================================================================
- Program:   OsiriX
+ This file is part of the Horos Project (www.horosproject.org)
  
- Copyright (c) OsiriX Team
- All rights reserved.
- Distributed under GNU - LGPL
+ Horos is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation,  version 3 of the License.
  
- See http://www.osirix-viewer.com/copyright.html for details.
+ Portions of the Horos Project were originally licensed under the GNU GPL license.
+ However, all authors of that software have agreed to modify the license to the
+ GNU LGPL.
  
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.
- =========================================================================*/
+ Horos is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY EXPRESS OR IMPLIED, INCLUDING ANY WARRANTY OF
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE OR USE.  See the
+ GNU Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License
+ along with Horos.  If not, see http://www.gnu.org/licenses/lgpl.html
+ 
+ Prior versions of this file were published by the OsiriX team pursuant to
+ the below notice and licensing protocol.
+ ============================================================================
+ Program:   OsiriX
+  Copyright (c) OsiriX Team
+  All rights reserved.
+  Distributed under GNU - LGPL
+  
+  See http://www.osirix-viewer.com/copyright.html for details.
+     This software is distributed WITHOUT ANY WARRANTY; without even
+     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+     PURPOSE.
+ ============================================================================*/
 
 #import "options.h"
 
@@ -47,12 +66,8 @@
 
 static NSString *MPRPlaneObservationContext = @"MPRPlaneObservationContext";
 
-#ifdef OSIRIX_VIEWER
-void setvtkMeanIPMode( int m){}
-#else
-extern void setvtkMeanIPMode( int m);
-#endif
 
+extern void setvtkMeanIPMode( int m);
 extern short intersect3D_2Planes( float *Pn1, float *Pv1, float *Pn2, float *Pv2, float *u, float *iP);
 static float deg2rad = M_PI / 180.0; 
 
@@ -678,16 +693,16 @@ static float deg2rad = M_PI / 180.0;
     {
         [self willChangeValueForKey:@"interpolationMode"];
         self->selectedInterpolationMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"selectedCPRInterpolationMode"];
-        if (self->selectedInterpolationMode !=  CPRInterpolationModeNearestNeighbor &&
+        if (self->selectedInterpolationMode != CPRInterpolationModeNearestNeighbor &&
             self->selectedInterpolationMode != CPRInterpolationModeCubic)
         {
-            self->selectedInterpolationMode = CPRInterpolationModeNearestNeighbor;
+            self->selectedInterpolationMode = CPRInterpolationModeCubic;
         }
         [self didChangeValueForKey:@"interpolationMode"];
     }
     else
     {
-        self->selectedInterpolationMode = CPRInterpolationModeNearestNeighbor;
+        self->selectedInterpolationMode = CPRInterpolationModeCubic;
         [[NSUserDefaults standardUserDefaults] setInteger:self.selectedInterpolationMode
                                                    forKey:@"selectedCPRInterpolationMode"];
     }
@@ -2337,8 +2352,8 @@ static float deg2rad = M_PI / 180.0;
 		[mprView3.vrView setWLWW: pWL :pWW];
 		[mprView3.vrView setBlendingWLWW: bpWL :bpWW];
 	}
-	[mprView3 updateViewMPROnLoading:isInitializing];
     
+	[mprView3 updateViewMPROnLoading:isInitializing];
     [cprView setClippingRangeMode:clippingRangeMode];
 }
 

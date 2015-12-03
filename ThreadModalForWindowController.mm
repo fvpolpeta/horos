@@ -1,16 +1,35 @@
 /*=========================================================================
- Program:   OsiriX
+ This file is part of the Horos Project (www.horosproject.org)
  
- Copyright (c) OsiriX Team
- All rights reserved.
- Distributed under GNU - LGPL
+ Horos is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation,  version 3 of the License.
  
- See http://www.osirix-viewer.com/copyright.html for details.
+ Portions of the Horos Project were originally licensed under the GNU GPL license.
+ However, all authors of that software have agreed to modify the license to the
+ GNU LGPL.
  
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.
- =========================================================================*/
+ Horos is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY EXPRESS OR IMPLIED, INCLUDING ANY WARRANTY OF
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE OR USE.  See the
+ GNU Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License
+ along with Horos.  If not, see http://www.gnu.org/licenses/lgpl.html
+ 
+ Prior versions of this file were published by the OsiriX team pursuant to
+ the below notice and licensing protocol.
+ ============================================================================
+ Program:   OsiriX
+  Copyright (c) OsiriX Team
+  All rights reserved.
+  Distributed under GNU - LGPL
+  
+  See http://www.osirix-viewer.com/copyright.html for details.
+     This software is distributed WITHOUT ANY WARRANTY; without even
+     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+     PURPOSE.
+ ============================================================================*/
 
 
 #import "ThreadModalForWindowController.h"
@@ -257,31 +276,38 @@ static NSString* ThreadModalForWindowControllerObservationContext = @"ThreadModa
 }
 
 -(void)invalidate {
-	DLog(@"[ThreadModalForWindowController invalidate]");
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSThreadWillExitNotification object:_thread];
-    
-    [self.progressIndicator setDoubleValue:self.thread.subthreadsAwareProgress];
-    [self.progressIndicator setIndeterminate: self.thread.progress < 0];
-    if (self.thread.progress < 0) [self.progressIndicator startAnimation:self];
-    [self.progressIndicator displayIfNeeded];
-    lastGUIUpdate = [NSDate timeIntervalSinceReferenceDate];
-    
-    @synchronized( self.thread)
+    if (![NSThread isMainThread])
     {
-        [self.thread.threadDictionary removeObjectForKey:NSThreadModalForWindowControllerKey];
+        return [self performSelectorOnMainThread:@selector(invalidate) withObject:nil waitUntilDone:NO];
     }
-    
-    _isValid = NO;
-    
-	if ([NSThread isMainThread]) 
-		[NSApp endSheet:self.window];
-	else [NSApp performSelectorOnMainThread:@selector(endSheet:) withObject:self.window waitUntilDone:NO];
-//    if (![self.window isSheet]) {
-//        if ([NSThread isMainThread]) 
-//            [self.window orderOut:self];
-//        else [self.window performSelectorOnMainThread:@selector(orderOut:) withObject:self waitUntilDone:NO];
-//    }
-    
+    else
+    {
+        
+        DLog(@"[ThreadModalForWindowController invalidate]");
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSThreadWillExitNotification object:_thread];
+        
+        [self.progressIndicator setDoubleValue:self.thread.subthreadsAwareProgress];
+        [self.progressIndicator setIndeterminate: self.thread.progress < 0];
+        if (self.thread.progress < 0) [self.progressIndicator startAnimation:self];
+        [self.progressIndicator displayIfNeeded];
+        lastGUIUpdate = [NSDate timeIntervalSinceReferenceDate];
+        
+        @synchronized( self.thread)
+        {
+            [self.thread.threadDictionary removeObjectForKey:NSThreadModalForWindowControllerKey];
+        }
+        
+        _isValid = NO;
+        
+        if ([NSThread isMainThread])
+            [NSApp endSheet:self.window];
+        else [NSApp performSelectorOnMainThread:@selector(endSheet:) withObject:self.window waitUntilDone:NO];
+        //    if (![self.window isSheet]) {
+        //        if ([NSThread isMainThread])
+        //            [self.window orderOut:self];
+        //        else [self.window performSelectorOnMainThread:@selector(orderOut:) withObject:self waitUntilDone:NO];
+        //    }
+    }
 }
 
 -(void)threadWillExitNotification:(NSNotification*)notification {

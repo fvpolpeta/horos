@@ -1,34 +1,35 @@
 /*=========================================================================
- Program:   OsiriX
- 
- Copyright (c) OsiriX Team
- All rights reserved.
- Distributed under GNU - LGPL
- 
- See http://www.osirix-viewer.com/copyright.html for details.
- 
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.
- ---------------------------------------------------------------------------
- 
- This file is part of the Horos Project.
- 
- Current contributors to the project include Alex Bettarini and Danny Weissman.
+ This file is part of the Horos Project (www.horosproject.org)
  
  Horos is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation,  version 3 of the License.
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, Êversion 3 of the License.
  
- Horos is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ Portions of the Horos Project were originally licensed under the GNU GPL license.
+ However, all authors of that software have agreed to modify the license to the
+ GNU LGPL.
  
- You should have received a copy of the GNU General Public License
- along with Horos.  If not, see <http://www.gnu.org/licenses/>.
+ Horos is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY EXPRESS OR IMPLIED, INCLUDING ANY WARRANTY OF
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE OR USE. ÊSee the
+ GNU Lesser General Public License for more details.
  
- =========================================================================*/
+ You should have received a copy of the GNU Lesser General Public License
+ along with Horos. ÊIf not, see http://www.gnu.org/licenses/lgpl.html
+ 
+ Prior versions of this file were published by the OsiriX team pursuant to
+ the below notice and licensing protocol.
+ ============================================================================
+ Program: Ê OsiriX
+ ÊCopyright (c) OsiriX Team
+ ÊAll rights reserved.
+ ÊDistributed under GNU - LGPL
+ Ê
+ ÊSee http://www.osirix-viewer.com/copyright.html for details.
+ Ê Ê This software is distributed WITHOUT ANY WARRANTY; without even
+ Ê Ê the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ Ê Ê PURPOSE.
+ ============================================================================*/
 
 #import "options.h"
 
@@ -36,7 +37,7 @@
 
 #import "VRView.h"
 
-#import "OsiriXFixedPointVolumeRayCastMapper.h"
+#import "vtkHorosFixedPointVolumeRayCastMapper.h"
 
 #import "DCMCursor.h"
 #import "AppController.h"
@@ -123,7 +124,7 @@ extern "C"
 //#define BONEVALUE 250
 #define BONEOPACITY 1.1
 
-extern int dontRenderVolumeRenderingOsiriX;	// See OsiriXFixedPointVolumeRayCastMapper.cxx
+extern int dontRenderVolumeRenderingOsiriX;	// See vtkHorosFixedPointVolumeRayCastMapper.cxx
 extern unsigned int minimumStep;
 
 static NSRecursiveLock *drawLock = nil;
@@ -812,7 +813,7 @@ public:
     
     switch( modeID)
     {
-        case 0:
+        case 0: //Volume
             if( volumeMapper)
                 volumeMapper->SetBlendModeToComposite();
             
@@ -820,7 +821,7 @@ public:
                 textureMapper->SetBlendModeToComposite();
             break;
             
-        case 1:
+        case 1: //Max
             if( volumeMapper)
                 volumeMapper->SetBlendModeToMaximumIntensity();
             
@@ -828,8 +829,16 @@ public:
                 textureMapper->SetBlendModeToMaximumIntensity();
             break;
             
-        case 2:
-        case 3: // Mean
+        case 2: //Min
+            if( volumeMapper)
+                volumeMapper->SetBlendModeToMinimumIntensity();
+            
+            if( textureMapper)
+                textureMapper->SetBlendModeToMinimumIntensity();
+            break;
+            
+            
+        case 3: // Mean - Effect of Mean is triggered externally by setvtkMeanIPMode
             if( volumeMapper)
                 volumeMapper->SetBlendModeToMinimumIntensity();
             
@@ -911,7 +920,7 @@ public:
 {
     if( volumeMapper == nil)
     {
-        volumeMapper = OsiriXFixedPointVolumeRayCastMapper::New();
+        volumeMapper = vtkHorosFixedPointVolumeRayCastMapper::New();
         volumeMapper->SetInputConnection(reader->GetOutputPort());
     }
     
@@ -1054,7 +1063,7 @@ public:
         case 0:		// RAY CAST
             if( blendingVolumeMapper == nil)
             {
-                blendingVolumeMapper = OsiriXFixedPointVolumeRayCastMapper::New();
+                blendingVolumeMapper = vtkHorosFixedPointVolumeRayCastMapper::New();
                 blendingVolumeMapper->SetInputConnection(blendingReader->GetOutputPort());
                 
             }
@@ -6272,7 +6281,7 @@ public:
         
         // Force min/max recomputing
         if( blendingVolumeMapper) blendingVolumeMapper->Delete();
-        blendingVolumeMapper = OsiriXFixedPointVolumeRayCastMapper::New();
+        blendingVolumeMapper = vtkHorosFixedPointVolumeRayCastMapper::New();
         blendingVolumeMapper->SetInputConnection(blendingReader->GetOutputPort());
         blendingVolumeMapper->SetMinimumImageSampleDistance( LOD);
         blendingVolumeMapper->Update();
@@ -7069,7 +7078,7 @@ public:
     @try
     {
         
-        OsiriXFixedPointVolumeRayCastMapper *mapper = nil;
+        vtkHorosFixedPointVolumeRayCastMapper *mapper = nil;
         DCMPix *firstObj = nil;
         
         if( blendingView)
@@ -9062,7 +9071,7 @@ public:
 {
     if( volumeMapper == nil)
     {
-        volumeMapper = OsiriXFixedPointVolumeRayCastMapper::New();
+        volumeMapper = vtkHorosFixedPointVolumeRayCastMapper::New();
         volumeMapper->SetInputConnection(reader->GetOutputPort());
     }
     
@@ -9077,7 +9086,7 @@ public:
         if( volumeMapper)
             volumeMapper->Delete();
         
-        volumeMapper = (OsiriXFixedPointVolumeRayCastMapper*) mapper;
+        volumeMapper = (vtkHorosFixedPointVolumeRayCastMapper*) mapper;
         volume->SetMapper( volumeMapper);
     }
 }

@@ -1,16 +1,37 @@
 /*=========================================================================
- Program:   OsiriX
+ This file is part of the Horos Project (www.horosproject.org)
  
- Copyright (c) OsiriX Team
- All rights reserved.
- Distributed under GNU - LGPL
+ Horos is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, Êversion 3 of the License.
  
- See http://www.osirix-viewer.com/copyright.html for details.
+ Portions of the Horos Project were originally licensed under the GNU GPL license.
+ However, all authors of that software have agreed to modify the license to the
+ GNU LGPL.
  
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.
- =========================================================================*/
+ Horos is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY EXPRESS OR IMPLIED, INCLUDING ANY WARRANTY OF
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE OR USE. ÊSee the
+ GNU Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License
+ along with Horos. ÊIf not, see http://www.gnu.org/licenses/lgpl.html
+ 
+ Prior versions of this file were published by the OsiriX team pursuant to
+ the below notice and licensing protocol.
+ ============================================================================
+ Program: Ê OsiriX
+ ÊCopyright (c) OsiriX Team
+ ÊAll rights reserved.
+ ÊDistributed under GNU - LGPL
+ Ê
+ ÊSee http://www.osirix-viewer.com/copyright.html for details.
+ Ê Ê This software is distributed WITHOUT ANY WARRANTY; without even
+ Ê Ê the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ Ê Ê PURPOSE.
+ ============================================================================*/
+
+#include <objc/runtime.h>
 
 #include "options.h"
 
@@ -109,6 +130,8 @@
 #import "XMLControllerDCMTKCategory.h"
 #import "WADOXML.h"
 #import "DicomDir.h"
+#import "CPRVolumeData.h"
+#import "O2HMigrationAssistant.h"
 
 #import "url.h"
 
@@ -262,6 +285,7 @@ static NSString*	ViewersToolbarItemIdentifier	= @"windows.tif";
 static NSString*	WebServerSingleNotification	= @"Safari.tif";
 static NSString*	AddStudiesToUserItemIdentifier	= @"NSUserAccounts";
 static NSString*    ResetSplitViewsItemIdentifier = @"Reset.pdf";
+static NSString*    HorosMigrationAssistantIdentifier = @"O2HMigrationAssistant.png";
 
 static NSTimeInterval gLastActivity = 0;
 static BOOL dontShowOpenSubSeries = NO;
@@ -14255,6 +14279,23 @@ static NSArray*	openSubSeriesArray = nil;
     @catch (NSException *e) {
         N2LogException( e);
     }
+    
+    
+    BOOL firstTimeExecution = ([[NSUserDefaults standardUserDefaults] objectForKey:@"FIRSTTIMEEXECUTION"] == nil);
+    if (firstTimeExecution == YES)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:@"FIRSTTIMEEXECUTION"];
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:CPRInterpolationModeCubic
+                                                   forKey:@"selectedCPRInterpolationMode"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^() {
+            [self restoreWindowState:self];
+            [[self window] performZoom:self];
+        });
+    }
+    
+    [O2HMigrationAssistant performStartupO2HTasks:self];
 }
 
 - (IBAction) clickBanner:(id) sender
@@ -19037,6 +19078,15 @@ restart:
         [toolbarItem setTarget: self];
         [toolbarItem setAction: @selector(restoreWindowState:)];
     }
+    else if ([itemIdent isEqualToString: HorosMigrationAssistantIdentifier])
+    {
+        [toolbarItem setLabel: NSLocalizedString(@"Migration Assistant",nil)];
+        [toolbarItem setPaletteLabel: NSLocalizedString(@"Migration Assistant",nil)];
+        [toolbarItem setToolTip: NSLocalizedString(@"Open Horos Migration Assistant",nil)];
+        [toolbarItem setImage: [NSImage imageNamed: HorosMigrationAssistantIdentifier]];
+        [toolbarItem setTarget: self];
+        [toolbarItem setAction: @selector(openHorosMigrationAssistant:)];
+    }
     else
     {
         // Is it a plugin menu item?
@@ -19079,8 +19129,80 @@ restart:
     return toolbarItem;
 }
 
+
+- (void) openHorosMigrationAssistant:(id) sender
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"O2H_MIGRATION_USER_ACTION"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    if ([O2HMigrationAssistant isOsiriXInstalled] == NO)
+    {
+        NSRunInformationalAlertPanel(NSLocalizedString(@"Horos Migration Assistant", nil),
+                                     NSLocalizedString(@"It seems you don't have OsiriX installed.", nil),
+                                     NSLocalizedString(@"Return",nil), nil, nil);
+        return;
+    }
+    
+    [O2HMigrationAssistant performStartupO2HTasks:self];
+}
+
+
+- (void)spaceEvenly:(NSSplitView *)splitView
+{
+    // get the subviews of the split view
+    NSArray *subviews = [splitView subviews];
+    unsigned int n = [subviews count];
+    
+    // compute the new height of each subview
+    float divider = [splitView dividerThickness];
+    float height = ([splitView bounds].size.height - (n - 1) * divider) / n;
+    
+    // adjust the frames of all subviews
+    float y = 0;
+    NSView *subview;
+    NSEnumerator *e = [subviews objectEnumerator];
+    while ((subview = [e nextObject]) != nil)
+    {
+        NSRect frame = [subview frame];
+        frame.origin.y = rintf(y);
+        frame.size.height = rintf(y + height) - frame.origin.y;
+        [subview setFrame:frame];
+        y += height + divider;
+    }
+    
+    // have the AppKit redraw the dividers
+    [splitView adjustSubviews];
+}
+
+
 - (void) restoreWindowState:(id) sender
 {
+    NSView* left = [[splitDrawer subviews] objectAtIndex:0];
+    [left setHidden:NO];
+    NSRect f = left.frame;
+    f.size.width  = 180;
+    [left setFrame:f];
+    
+    
+    [splitDrawer setHidden:NO];
+    [self spaceEvenly:splitDrawer];
+    
+    [splitAlbums setHidden:NO];
+    [self spaceEvenly:splitAlbums];
+    [splitViewHorz setHidden:NO];
+    [self spaceEvenly:splitViewHorz];
+    [splitComparative setHidden:NO];
+    [self spaceEvenly:splitComparative];
+    [splitViewHorz setHidden:NO];
+    [self spaceEvenly:splitViewVert];
+    
+    [splitDrawer saveDefault: @"SplitDrawer"];
+    [splitAlbums saveDefault: @"SplitAlbums"];
+    [splitViewHorz saveDefault: @"SplitHorz2"];
+    [splitComparative saveDefault: @"SplitComparative"];
+    [splitViewVert saveDefault: @"SplitVert2"];
+    
+    /*
     [splitDrawer restoreDefault: @"SplitDrawer"];
     [splitAlbums restoreDefault: @"SplitAlbums"];
     [splitViewHorz restoreDefault: @"SplitHorz2"];
@@ -19117,12 +19239,12 @@ restart:
         [splitViewVert resizeSubviewsWithOldSize:splitViewVert.bounds.size];
     }
     
-    [splitDrawer restoreDefault: @"SplitDrawer"];
-    [splitAlbums restoreDefault: @"SplitAlbums"];
-    [splitViewHorz restoreDefault: @"SplitHorz2"];
-    [splitComparative restoreDefault: @"SplitComparative"];
-    [splitViewVert restoreDefault: @"SplitVert2"];
-
+    [splitDrawer saveDefault: @"SplitDrawer"];
+    [splitAlbums saveDefault: @"SplitAlbums"];
+    [splitViewHorz saveDefault: @"SplitHorz2"];
+    [splitComparative saveDefault: @"SplitComparative"];
+    [splitViewVert saveDefault: @"SplitVert2"];
+     */
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers: (NSToolbar *)toolbar
@@ -19183,6 +19305,7 @@ restart:
                              ReportToolbarItemIdentifier,
                              ToggleDrawerToolbarItemIdentifier,
                              ResetSplitViewsItemIdentifier,
+                             HorosMigrationAssistantIdentifier,
                              nil];
     
     NSArray*		allPlugins = [[PluginManager pluginsDict] allKeys];

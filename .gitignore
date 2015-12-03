@@ -16,6 +16,8 @@ Binaries/DB_Previous_Models/
 Binaries/DCMTK/
 Binaries/dciodvfy
 Binaries/Growl.framework/
+Binaries/GDCMHeaders/
+Binaries/GDCMLibs/
 Binaries/ILCrashReporter.framework/
 Binaries/ITKHeaders/
 Binaries/ITKLibs/
@@ -29,8 +31,11 @@ Binaries/PAGES/
 Binaries/ReportsToPDF/odt2pdf/build/odt2pdf
 Binaries/VTKHeaders/
 Binaries/VTKLibs/
+Binaries/GDCMHeaders/
+Binaries/GDCMLibs/
 Binaries/weasis/
 Binaries/._OsiriX Report.template
+Binaries/FeedbackReporter.framework/
 options.h
 url.h
 
@@ -39,5 +44,7 @@ xcuserdata/
 
 DerivedData/
 
-
 *.xcworkspacedata
+
+
+

@@ -855,7 +855,6 @@
 		99676F211BF43C22007C7531 /* format_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 99676F1D1BF43C22007C7531 /* format_defs.h */; };
 		99676F221BF43C22007C7531 /* openjpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 99676F1E1BF43C22007C7531 /* openjpeg.h */; };
 		99676F231BF43C22007C7531 /* opj_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 99676F1F1BF43C22007C7531 /* opj_config.h */; };
-		99676F241BF43C22007C7531 /* opj_stdint.h in Headers */ = {isa = PBXBuildFile; fileRef = 99676F201BF43C22007C7531 /* opj_stdint.h */; };
 		998309111BB62D4100CAB197 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9983090F1BB62D4100CAB197 /* JRSwizzle.h */; };
 		998309121BB62D4100CAB197 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 998309101BB62D4100CAB197 /* JRSwizzle.m */; };
 		998B52E21AE0890300D317CF /* Horos.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 998B52E11AE0890300D317CF /* Horos.sdef */; };
@@ -4085,7 +4084,6 @@
 		99676F1D1BF43C22007C7531 /* format_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = format_defs.h; path = Binaries/openjpeg/format_defs.h; sourceTree = "<group>"; };
 		99676F1E1BF43C22007C7531 /* openjpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = openjpeg.h; path = Binaries/openjpeg/openjpeg.h; sourceTree = "<group>"; };
 		99676F1F1BF43C22007C7531 /* opj_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_config.h; path = Binaries/openjpeg/opj_config.h; sourceTree = "<group>"; };
-		99676F201BF43C22007C7531 /* opj_stdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_stdint.h; path = Binaries/openjpeg/opj_stdint.h; sourceTree = "<group>"; };
 		9983090F1BB62D4100CAB197 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		998309101BB62D4100CAB197 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		998B52E11AE0890300D317CF /* Horos.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Horos.sdef; sourceTree = "<group>"; };
@@ -6576,7 +6574,6 @@
 				99676F1D1BF43C22007C7531 /* format_defs.h */,
 				99676F1E1BF43C22007C7531 /* openjpeg.h */,
 				99676F1F1BF43C22007C7531 /* opj_config.h */,
-				99676F201BF43C22007C7531 /* opj_stdint.h */,
 				434B47AB1A1A1AD4008CF8CF /* libopenjp2.a */,
 				434B461B1A19F631008CF8CF /* OPJSupport.cpp */,
 				434B461C1A19F631008CF8CF /* OPJSupport.h */,
@@ -10278,7 +10275,6 @@
 				BFBF40B909B6828D00545F5E /* dccfprmp.h in Headers */,
 				BFBF40BB09B6828D00545F5E /* dccfrsmp.h in Headers */,
 				BFBF40BD09B6828D00545F5E /* dccftsmp.h in Headers */,
-				99676F241BF43C22007C7531 /* opj_stdint.h in Headers */,
 				BFBF40BF09B6828D00545F5E /* dccfuidh.h in Headers */,
 				BFBF40C109B6828D00545F5E /* dcmlayer.h in Headers */,
 				BFBF40C209B6828D00545F5E /* dcmsmap.h in Headers */,

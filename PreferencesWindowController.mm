@@ -359,9 +359,6 @@ static const NSMutableArray* pluginPanes = [[NSMutableArray alloc] init];
 	[panesListView setButtonActionTarget:self];
 	[panesListView setButtonActionSelector:@selector(setCurrentContext:)];
 	
-	[scrollView setBackgroundColor:[NSColor colorWithCalibratedWhite:237./255 alpha:1]];
-	[scrollView setDrawsBackground:YES];
-	
 	NSBundle* bundle = [NSBundle mainBundle];
 	NSString* name;
 	
@@ -405,6 +402,21 @@ static const NSMutableArray* pluginPanes = [[NSMutableArray alloc] init];
         if ([window.windowController isKindOfClass:[PluginManagerController class]])
             [window close];
     }
+    
+    scrollView = [[NSScrollView alloc] initWithFrame:[[[self window] contentView] frame]];
+    
+    // configure the scroll view
+    [scrollView setBorderType:NSNoBorder];
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:NO];
+    
+    [scrollView setBackgroundColor:[NSColor colorWithCalibratedWhite:237./255 alpha:1]];
+    [scrollView setDrawsBackground:YES];
+    
+    scrollView.horizontalScrollElasticity = NSScrollElasticityNone;
+    scrollView.verticalScrollElasticity = NSScrollElasticityNone;
+    
+    // embed your custom view in the scroll view
 }
 
 
@@ -493,9 +505,15 @@ static const NSMutableArray* pluginPanes = [[NSMutableArray alloc] init];
 		
 		[context.pane willSelect];
         
-        NSSize newSize = [view frame].size;
+       
         
-        [[self window] setContentView:view];
+        [scrollView setDocumentView:view];
+        
+        [[self window] setContentView:scrollView];
+        
+        
+        
+        NSSize newSize = [view frame].size;
         
 		[context.pane didSelect];
 
@@ -542,19 +560,35 @@ static const NSMutableArray* pluginPanes = [[NSMutableArray alloc] init];
 
 -(void) synchronizeSizeWithContent:(NSSize) newSize
 {
-    CGFloat newHeight = newSize.height + [self toolbarHeight];
+    CGFloat maxHeight = [self window].screen.visibleFrame.size.height;
+    
+    CGFloat newHeight = newSize.height + [self toolbarHeight] + 33;
+    
+    if (newHeight > maxHeight)
+    {
+        newHeight = maxHeight;
+    }
+    
     CGFloat newWidth = newSize.width;
     
     NSRect aFrame = [[[self window] class] contentRectForFrameRect:[[self window] frame]
                                                          styleMask:[[self window] styleMask]];
     
-    aFrame.origin.y += aFrame.size.height;
-    aFrame.origin.y -= newHeight;
+    if (newHeight > aFrame.size.height)
+    {
+        aFrame.origin.y -= aFrame.size.height;
+        aFrame.origin.y += newHeight;
+    }
+    else
+    {
+        aFrame.origin.y += aFrame.size.height;
+        aFrame.origin.y -= newHeight;
+    }
     aFrame.size.height = newHeight;
     aFrame.size.width = newWidth;
     
-    aFrame = [[[self window] class] frameRectForContentRect:aFrame
-                                                  styleMask:[[self window]styleMask]];
+    //aFrame = [[[self window] class] frameRectForContentRect:aFrame
+    //                                            styleMask:[[self window]styleMask]];
     
     [[self  window] setFrame:aFrame display:YES animate:YES];
 }

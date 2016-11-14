@@ -729,10 +729,6 @@
 		992DD7721BCB095700369C09 /* libgdcmMSFF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DD75A1BCB095700369C09 /* libgdcmMSFF.a */; };
 		992DD7741BCB095700369C09 /* libgdcmopenjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DD75B1BCB095700369C09 /* libgdcmopenjpeg.a */; };
 		992DD7761BCB095700369C09 /* libgdcmuuid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DD75C1BCB095700369C09 /* libgdcmuuid.a */; };
-		9932BC6D1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9932BC6B1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9932BC6E1CC7C8EB0062BB0B /* libssl.0.9.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9932BC6C1CC7C8EB0062BB0B /* libssl.0.9.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9932BC6F1CC7C9120062BB0B /* libcrypto.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9932BC6B1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib */; };
-		9932BC701CC7C9120062BB0B /* libssl.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9932BC6C1CC7C8EB0062BB0B /* libssl.0.9.8.dylib */; };
 		9939F7A91BCB0BF8009FEB69 /* FVTiff.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE73FC808F44724002A395F /* FVTiff.m */; };
 		993DB4A01C0243D50084218A /* FeedbackReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; };
 		993DB4A11C0244430084218A /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -867,6 +863,10 @@
 		999B0B651BB70F0800AF018A /* O2HMigrationAssistant.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999B0B621BB70F0800AF018A /* O2HMigrationAssistant.xib */; };
 		999B0B671BB711ED00AF018A /* CurvedArrowGrayLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 999B0B661BB711ED00AF018A /* CurvedArrowGrayLeft.png */; };
 		999B0B681BB7309200AF018A /* Osirix.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9966A1AF1AE09FFE00F2D81A /* Osirix.icns */; };
+		99BCCAB71DD9001700FDBD04 /* libcrypto.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BCCAB51DD9001600FDBD04 /* libcrypto.0.9.8.dylib */; };
+		99BCCAB81DD9001700FDBD04 /* libssl.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BCCAB61DD9001700FDBD04 /* libssl.0.9.8.dylib */; };
+		99BCCABC1DD9002D00FDBD04 /* libssl.0.9.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 99BCCABA1DD9002D00FDBD04 /* libssl.0.9.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		99BCCABE1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 99BCCABD1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		99C32EEF1CFF78E7001E71F3 /* PluginFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2C24E10677861300A08910 /* PluginFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99CDC0F51ADF0D0900F34F19 /* libCharLS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB451802149F464B006674BF /* libCharLS.a */; };
 		A0344496143DE4AA003E1AFA /* DCMUSRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = A085E104141E53210072BF0D /* DCMUSRegion.m */; };
@@ -2165,8 +2165,6 @@
 		BFAFEE9508F2220B002AD789 /* PluginFileFormatDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAFEE9308F2220B002AD789 /* PluginFileFormatDecoder.m */; };
 		BFBCD8A709E4C2E40078ABB6 /* DCMTKServiceClassUser.h in Headers */ = {isa = PBXBuildFile; fileRef = BFBCD8A509E4C2E40078ABB6 /* DCMTKServiceClassUser.h */; };
 		BFBCD8A809E4C2E40078ABB6 /* DCMTKServiceClassUser.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFBCD8A609E4C2E40078ABB6 /* DCMTKServiceClassUser.mm */; };
-		BFBF3AA109B681F500545F5E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBF3A9D09B681F500545F5E /* libcrypto.dylib */; };
-		BFBF3AA209B681F500545F5E /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBF3A9E09B681F500545F5E /* libssl.dylib */; };
 		BFBF3AA309B681F500545F5E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBF3A9F09B681F500545F5E /* libxml2.dylib */; };
 		BFBF3AA409B681F500545F5E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBF3AA009B681F500545F5E /* libz.dylib */; };
 		BFBF3E6E09B6828D00545F5E /* cfunix.h in Headers */ = {isa = PBXBuildFile; fileRef = BFBF3AB809B6827D00545F5E /* cfunix.h */; };
@@ -3360,8 +3358,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9932BC6D1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib in Copy Frameworks */,
-				9932BC6E1CC7C8EB0062BB0B /* libssl.0.9.8.dylib in Copy Frameworks */,
+				99BCCABE1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib in Copy Frameworks */,
+				99BCCABC1DD9002D00FDBD04 /* libssl.0.9.8.dylib in Copy Frameworks */,
 				993DB4A11C0244430084218A /* FeedbackReporter.framework in Copy Frameworks */,
 				999901A41B52B24200921EA1 /* libdcmprintscu.dylib in Copy Frameworks */,
 				999901A51B52B24200921EA1 /* libxerces-c.27.dylib in Copy Frameworks */,
@@ -4054,8 +4052,6 @@
 		992DD75A1BCB095700369C09 /* libgdcmMSFF.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdcmMSFF.a; sourceTree = "<group>"; };
 		992DD75B1BCB095700369C09 /* libgdcmopenjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdcmopenjpeg.a; sourceTree = "<group>"; };
 		992DD75C1BCB095700369C09 /* libgdcmuuid.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdcmuuid.a; sourceTree = "<group>"; };
-		9932BC6B1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = Binaries/openssl/libraries/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
-		9932BC6C1CC7C8EB0062BB0B /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = Binaries/openssl/libraries/libssl.0.9.8.dylib; sourceTree = "<group>"; };
 		993DB49F1C0243D50084218A /* FeedbackReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedbackReporter.framework; path = Binaries/FeedbackReporter.framework; sourceTree = "<group>"; };
 		994FABED1CEBF25800980A15 /* OnOffSwitchControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnOffSwitchControl.h; sourceTree = "<group>"; };
 		994FABEE1CEBF25800980A15 /* OnOffSwitchControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnOffSwitchControl.m; sourceTree = "<group>"; };
@@ -4094,6 +4090,10 @@
 		999B0B611BB70F0800AF018A /* O2HMigrationAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = O2HMigrationAssistant.m; path = Horos.xcodeproj/../O2HMigrationAssistant.m; sourceTree = "<group>"; };
 		999B0B621BB70F0800AF018A /* O2HMigrationAssistant.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = O2HMigrationAssistant.xib; path = Horos.xcodeproj/../O2HMigrationAssistant.xib; sourceTree = "<group>"; };
 		999B0B661BB711ED00AF018A /* CurvedArrowGrayLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurvedArrowGrayLeft.png; sourceTree = "<group>"; };
+		99BCCAB51DD9001600FDBD04 /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = Binaries/openssl/libraries/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
+		99BCCAB61DD9001700FDBD04 /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = Binaries/openssl/libraries/libssl.0.9.8.dylib; sourceTree = "<group>"; };
+		99BCCABA1DD9002D00FDBD04 /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = Binaries/openssl/libraries/libssl.0.9.8.dylib; sourceTree = "<group>"; };
+		99BCCABD1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = Binaries/openssl/libraries/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
 		A085E103141E53210072BF0D /* DCMUSRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMUSRegion.h; sourceTree = "<group>"; };
 		A085E104141E53210072BF0D /* DCMUSRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMUSRegion.m; sourceTree = "<group>"; };
 		A90202BA0B980CD60001A00B /* PluginManagerController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginManagerController.h; sourceTree = "<group>"; };
@@ -4726,8 +4726,6 @@
 		BFAFEE9308F2220B002AD789 /* PluginFileFormatDecoder.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PluginFileFormatDecoder.m; sourceTree = "<group>"; };
 		BFBCD8A509E4C2E40078ABB6 /* DCMTKServiceClassUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMTKServiceClassUser.h; sourceTree = "<group>"; };
 		BFBCD8A609E4C2E40078ABB6 /* DCMTKServiceClassUser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DCMTKServiceClassUser.mm; sourceTree = "<group>"; };
-		BFBF3A9D09B681F500545F5E /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
-		BFBF3A9E09B681F500545F5E /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = /usr/lib/libssl.dylib; sourceTree = "<absolute>"; };
 		BFBF3A9F09B681F500545F5E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
 		BFBF3AA009B681F500545F5E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		BFBF3AB809B6827D00545F5E /* cfunix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = cfunix.h; sourceTree = "<group>"; };
@@ -5976,6 +5974,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99BCCAB71DD9001700FDBD04 /* libcrypto.0.9.8.dylib in Frameworks */,
+				99BCCAB81DD9001700FDBD04 /* libssl.0.9.8.dylib in Frameworks */,
 				994FABF91CED3E1000980A15 /* libgdcmcharls.a in Frameworks */,
 				994FABFA1CED3E1000980A15 /* libgdcmCommon.a in Frameworks */,
 				994FABFB1CED3E1000980A15 /* libgdcmDICT.a in Frameworks */,
@@ -5988,8 +5988,6 @@
 				994FAC021CED3E1000980A15 /* libgdcmMEXD.a in Frameworks */,
 				994FAC031CED3E1000980A15 /* libgdcmMSFF.a in Frameworks */,
 				994FAC051CED3E1000980A15 /* libgdcmuuid.a in Frameworks */,
-				9932BC6F1CC7C9120062BB0B /* libcrypto.0.9.8.dylib in Frameworks */,
-				9932BC701CC7C9120062BB0B /* libssl.0.9.8.dylib in Frameworks */,
 				9966A1AB1AE09D7C00F2D81A /* Quartz.framework in Frameworks */,
 				9966A1A91AE09D6800F2D81A /* InstantMessage.framework in Frameworks */,
 				9966A1A71AE09D5D00F2D81A /* DiskArbitration.framework in Frameworks */,
@@ -6065,7 +6063,6 @@
 				436218531A2F375D006FA27A /* libvtkRenderingLabel-6.2.a in Frameworks */,
 				436217FA1A2F375C006FA27A /* libvtkCommonDataModel-6.2.a in Frameworks */,
 				436218241A2F375C006FA27A /* libvtkImagingMorphological-6.2.a in Frameworks */,
-				BFBF3AA109B681F500545F5E /* libcrypto.dylib in Frameworks */,
 				436218041A2F375C006FA27A /* libvtkFiltersAMR-6.2.a in Frameworks */,
 				4362181B1A2F375C006FA27A /* libvtkgl2ps-6.2.a in Frameworks */,
 				436217501A2F3730006FA27A /* libITKIOBMP-4.7.a in Frameworks */,
@@ -6086,7 +6083,6 @@
 				4362174F1A2F3730006FA27A /* libITKIOBioRad-4.7.a in Frameworks */,
 				436218231A2F375C006FA27A /* libvtkImagingMath-6.2.a in Frameworks */,
 				436217401A2F3730006FA27A /* libitkdouble-conversion-4.7.a in Frameworks */,
-				BFBF3AA209B681F500545F5E /* libssl.dylib in Frameworks */,
 				4362182E1A2F375C006FA27A /* libvtkIOCore-6.2.a in Frameworks */,
 				436218151A2F375C006FA27A /* libvtkFiltersStatistics-6.2.a in Frameworks */,
 				BFBF3AA309B681F500545F5E /* libxml2.dylib in Frameworks */,
@@ -6310,8 +6306,6 @@
 				7E54303C07A05E7100500ABB /* DiscRecordingUI.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				AB6D320C05B3159D0002F793 /* IOKit.framework */,
-				BFBF3A9D09B681F500545F5E /* libcrypto.dylib */,
-				BFBF3A9E09B681F500545F5E /* libssl.dylib */,
 				BFBF3A9F09B681F500545F5E /* libxml2.dylib */,
 				BFBF3AA009B681F500545F5E /* libz.dylib */,
 				AB0EA93B056EDC7E004BBDD3 /* OpenGL.framework */,
@@ -6386,6 +6380,7 @@
 		29B97314FDCFA39411CA2CEA /* OsiriX */ = {
 			isa = PBXGroup;
 			children = (
+				99BCCABF1DD9006C00FDBD04 /* OpenSSL */,
 				434B461A1A19F4E4008CF8CF /* OpenJPEG */,
 				AB451801149F44DD006674BF /* JPEG-LS (CharLS) */,
 				84A9D44712F7F8BE00DA1F99 /* KDU SDK */,
@@ -6543,6 +6538,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99BCCAB51DD9001600FDBD04 /* libcrypto.0.9.8.dylib */,
+				99BCCAB61DD9001700FDBD04 /* libssl.0.9.8.dylib */,
 				59FB64331230EE2F00EBA136 /* Ming */,
 				CE11138608EDD5E2005B15E1 /* ITKLibs */,
 				CE11138108EDD5CE005B15E1 /* VTKLibs */,
@@ -6553,8 +6550,6 @@
 				999901A31B52B24200921EA1 /* libxerces-c.27.dylib */,
 				436217891A2F3741006FA27A /* libjpeg.a */,
 				431BCC3F1A24AC94002B36FB /* libtiff.a */,
-				9932BC6B1CC7C8EB0062BB0B /* libcrypto.0.9.8.dylib */,
-				9932BC6C1CC7C8EB0062BB0B /* libssl.0.9.8.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -7157,6 +7152,15 @@
 				999B0B621BB70F0800AF018A /* O2HMigrationAssistant.xib */,
 			);
 			name = MigrationAssitant;
+			sourceTree = "<group>";
+		};
+		99BCCABF1DD9006C00FDBD04 /* OpenSSL */ = {
+			isa = PBXGroup;
+			children = (
+				99BCCABD1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib */,
+				99BCCABA1DD9002D00FDBD04 /* libssl.0.9.8.dylib */,
+			);
+			name = OpenSSL;
 			sourceTree = "<group>";
 		};
 		A90C722016E4D8AE0060302F /* Data */ = {
@@ -13920,6 +13924,8 @@
 		434B46141A19ECD6008CF8CF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -13942,7 +13948,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Cleanup Binaries";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -13985,11 +13991,11 @@
 					AYDicomPrint,
 				);
 				IBC_FLATTEN_NIBS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = "-fvisibility=default";
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = "";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 			};
 			name = Deployment;
 		};
@@ -13997,6 +14003,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -14005,8 +14012,8 @@
 					Binaries,
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 					"$(SRCROOT)",
-					"\"$(SRCROOT)/Binaries\"",
-					"\"$(SRCROOT)/build/Development\"",
+					"$(SRCROOT)/Binaries",
+					"$(SRCROOT)/build/Development",
 					"$(PROJECT_DIR)/build/Development",
 					"$(PROJECT_DIR)/Binaries",
 				);
@@ -14028,8 +14035,8 @@
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
 					AYDicomPrint,
+					/usr/include/libxml2,
 					/usr/local/include,
 				);
 				IBC_FLATTEN_NIBS = YES;
@@ -14037,13 +14044,12 @@
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				KEEP_PRIVATE_EXTERNS = YES;
 				LIBRARY_SEARCH_PATHS = (
+					AYDicomPrint,
 					"$(SRCROOT)/Binaries/VTKLibs",
 					"$(SRCROOT)/Binaries/ITKLibs",
-					"\"$(SRCROOT)/Binaries\"",
-					"\"$(SRCROOT)/Binaries/CharLS\"",
+					"$(SRCROOT)/Binaries",
+					"$(SRCROOT)/Binaries/CharLS",
 					"$(SRCROOT)/Binaries/openjpeg",
-					AYDicomPrint,
-					/usr/local/lib,
 					"$(PROJECT_DIR)/Binaries/LibTiff",
 					"$(PROJECT_DIR)/Binaries/ITKLibs",
 					"$(PROJECT_DIR)/Binaries/VTKLibs",
@@ -14051,6 +14057,7 @@
 					"$(PROJECT_DIR)/AYDicomPrint",
 					"$(PROJECT_DIR)/Binaries/GDCMLibs",
 					"$(PROJECT_DIR)/Binaries/openssl/libraries",
+					/usr/local/lib,
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -14071,7 +14078,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = Horos;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				STRIP_STYLE = debugging;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/GDCMHeaders $(SRCROOT)/Binaries/ITKHeaders $(SRCROOT)/Binaries/VTKHeaders $(SRCROOT)/Binaries/openjpeg/** $(SRCROOT)/Binaries/LibTiff $(SRCROOT)/Binaries/openssl/include";
 				WARNING_CFLAGS = "-no-pedantic";
@@ -14082,6 +14089,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -14102,7 +14111,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = "Horos Launcher";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Deployment;
@@ -14110,6 +14119,8 @@
 		43E98D1C1A32BF6A001B9E51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = "";
@@ -14146,7 +14157,7 @@
 				);
 				PRODUCT_NAME = HorosDCM;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/openjpeg/**";
@@ -14156,6 +14167,8 @@
 		43E98D1D1A32BF6A001B9E51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -14178,7 +14191,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Unzip Binaries";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -14191,6 +14204,8 @@
 		43E98D1E1A32BF6A001B9E51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -14213,7 +14228,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Cleanup Binaries";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -14248,7 +14263,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Build All Prerequisites";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -14261,19 +14276,23 @@
 		43E98D201A32BF6A001B9E51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = Documentation;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 			};
 			name = Deployment;
 		};
 		43E98D211A32BF6A001B9E51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = YES;
@@ -14314,7 +14333,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = Decompress;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = build;
@@ -14326,6 +14345,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -14351,7 +14372,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DICOMPrint;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
 				VALID_ARCHS = i386;
@@ -14362,6 +14383,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14387,7 +14410,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = HorosAPI;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Deployment;
@@ -14396,6 +14419,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -14416,7 +14441,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = "Horos Launcher";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Development;
@@ -14424,6 +14449,8 @@
 		7E76BEC1085757B60073649A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
@@ -14459,7 +14486,7 @@
 				);
 				PRODUCT_NAME = HorosDCM;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/openjpeg/**";
@@ -14491,7 +14518,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Build All Prerequisites";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -14505,6 +14532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -14513,8 +14541,8 @@
 					Binaries,
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 					"$(SRCROOT)",
-					"\"$(SRCROOT)/Binaries\"",
-					"\"$(SRCROOT)/build/Development\"",
+					"$(SRCROOT)/Binaries",
+					"$(SRCROOT)/build/Development",
 					"$(PROJECT_DIR)/build/Development",
 					"$(PROJECT_DIR)/Binaries",
 				);
@@ -14535,21 +14563,20 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
 					AYDicomPrint,
+					/usr/include/libxml2,
 					/usr/local/include,
 				);
 				IBC_FLATTEN_NIBS = NO;
 				INFOPLIST_FILE = "Deployment-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				LIBRARY_SEARCH_PATHS = (
+					AYDicomPrint,
 					"$(SRCROOT)/Binaries/VTKLibs",
 					"$(SRCROOT)/Binaries/ITKLibs",
-					"\"$(SRCROOT)/Binaries\"",
-					"\"$(SRCROOT)/Binaries/CharLS\"",
+					"$(SRCROOT)/Binaries",
+					"$(SRCROOT)/Binaries/CharLS",
 					"$(SRCROOT)/Binaries/openjpeg",
-					AYDicomPrint,
-					/usr/local/lib,
 					"$(PROJECT_DIR)/Binaries/LibTiff",
 					"$(PROJECT_DIR)/Binaries/ITKLibs",
 					"$(PROJECT_DIR)/Binaries/VTKLibs",
@@ -14557,6 +14584,7 @@
 					"$(PROJECT_DIR)/AYDicomPrint",
 					"$(PROJECT_DIR)/Binaries/GDCMLibs",
 					"$(PROJECT_DIR)/Binaries/openssl/libraries",
+					/usr/local/lib,
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -14577,7 +14605,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = Horos;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/GDCMHeaders $(SRCROOT)/Binaries/ITKHeaders $(SRCROOT)/Binaries/VTKHeaders $(SRCROOT)/Binaries/openjpeg/** $(SRCROOT)/Binaries/LibTiff $(SRCROOT)/Binaries/openssl/include";
 				WARNING_CFLAGS = "-no-pedantic";
 			};
@@ -14586,6 +14614,8 @@
 		7E76BED0085757B70073649A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -14608,7 +14638,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "Unzip Binaries";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -14654,11 +14684,11 @@
 					AYDicomPrint,
 				);
 				IBC_FLATTEN_NIBS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = "-fvisibility=default";
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = "";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 			};
 			name = Development;
 		};
@@ -14666,6 +14696,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14688,7 +14720,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = OsiriXAPI;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Development;
@@ -14697,6 +14729,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14719,7 +14753,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = OsiriXAPI;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Deployment;
@@ -14727,6 +14761,8 @@
 		9966A2DF1AE0B7E000F2D81A /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
@@ -14761,7 +14797,7 @@
 				);
 				PRODUCT_NAME = OsiriX;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/openjpeg/**";
@@ -14771,6 +14807,8 @@
 		9966A2E01AE0B7E000F2D81A /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = "";
@@ -14806,7 +14844,7 @@
 				);
 				PRODUCT_NAME = OsiriX;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Binaries/openjpeg/**";
@@ -14817,6 +14855,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14842,7 +14882,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = HorosAPI;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 			};
 			name = Development;
@@ -14850,6 +14890,8 @@
 		AB724FF40ADE6ECB00A212A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = YES;
@@ -14888,7 +14930,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = Decompress;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = build;
@@ -14899,13 +14941,15 @@
 		BF7486A60CC6AA5D00198387 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = Documentation;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 			};
 			name = Development;
 		};
@@ -14913,6 +14957,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -14938,7 +14984,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DICOMPrint;
-				SDKROOT = macosx10.11;
+				SDKROOT = macosx10.12;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
 				VALID_ARCHS = i386;

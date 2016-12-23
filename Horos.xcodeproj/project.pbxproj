@@ -869,6 +869,7 @@
 		99BCCABE1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 99BCCABD1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		99C32EEF1CFF78E7001E71F3 /* PluginFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2C24E10677861300A08910 /* PluginFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99CDC0F51ADF0D0900F34F19 /* libCharLS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB451802149F464B006674BF /* libCharLS.a */; };
+		99E908B01E0DA293003959A3 /* OsiriX Report.pages09.pages in Resources */ = {isa = PBXBuildFile; fileRef = 99E908AF1E0DA06C003959A3 /* OsiriX Report.pages09.pages */; };
 		A0344496143DE4AA003E1AFA /* DCMUSRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = A085E104141E53210072BF0D /* DCMUSRegion.m */; };
 		A90202BE0B980CD60001A00B /* PluginManagerController.h in Headers */ = {isa = PBXBuildFile; fileRef = A90202BA0B980CD60001A00B /* PluginManagerController.h */; };
 		A90202BF0B980CD60001A00B /* PluginManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90202BB0B980CD60001A00B /* PluginManagerController.m */; };
@@ -4094,6 +4095,7 @@
 		99BCCAB61DD9001700FDBD04 /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = Binaries/openssl/libraries/libssl.0.9.8.dylib; sourceTree = "<group>"; };
 		99BCCABA1DD9002D00FDBD04 /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = Binaries/openssl/libraries/libssl.0.9.8.dylib; sourceTree = "<group>"; };
 		99BCCABD1DD9005F00FDBD04 /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = Binaries/openssl/libraries/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
+		99E908AF1E0DA06C003959A3 /* OsiriX Report.pages09.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OsiriX Report.pages09.pages"; path = "Binaries/OsiriX Report.pages09.pages"; sourceTree = "<group>"; };
 		A085E103141E53210072BF0D /* DCMUSRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMUSRegion.h; sourceTree = "<group>"; };
 		A085E104141E53210072BF0D /* DCMUSRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMUSRegion.m; sourceTree = "<group>"; };
 		A90202BA0B980CD60001A00B /* PluginManagerController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginManagerController.h; sourceTree = "<group>"; };
@@ -6447,6 +6449,7 @@
 				CEFB8A9810C19902000DCCB0 /* ReportTemplate.odt */,
 				ABEF846909A23EF5006CEC3E /* ReportTemplate.doc */,
 				CE8A5016181BA499009A453B /* OsiriX Report.pages */,
+				99E908AF1E0DA06C003959A3 /* OsiriX Report.pages09.pages */,
 				A95B98AA0A6E65C900E476D4 /* QTExportPatientsTemplate.html */,
 				A95B98AB0A6E65C900E476D4 /* QTExportStudiesTemplate.html */,
 				A926BFC80A76577600F1B366 /* QTExportSeriesTemplate.html */,
@@ -11486,6 +11489,7 @@
 				71512E99152349E500B87012 /* DiscMountedAskTheUserDialog.xib in Resources */,
 				CE2BFE57153B177C00037546 /* iPad.png in Resources */,
 				71CE3C19157F489C00AC0112 /* List.pdf in Resources */,
+				99E908B01E0DA293003959A3 /* OsiriX Report.pages09.pages in Resources */,
 				CEA4F07515AEA5FE009584C7 /* Cloud.png in Resources */,
 				CEA4F07D15AEA606009584C7 /* OSIPACSOnDemand.xib in Resources */,
 				A91BF49715BD8A8900B7BA23 /* Anonymizer.pdf in Resources */,

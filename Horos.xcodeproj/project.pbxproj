@@ -715,6 +715,10 @@
 		84DE8CD311AC227B0029396D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE790A19105D4DE200CE6AAF /* WebKit.framework */; };
 		84E191FB1369966A008DCFC8 /* WADODownload.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E191F91369966A008DCFC8 /* WADODownload.h */; };
 		84E191FC1369966A008DCFC8 /* WADODownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E191FA1369966A008DCFC8 /* WADODownload.m */; };
+		9916E8F31F27520000B9A3E4 /* PPU Inferno.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9916E8EF1F27520000B9A3E4 /* PPU Inferno.plist */; };
+		9916E8F41F27520000B9A3E4 /* PPU Magma.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9916E8F01F27520000B9A3E4 /* PPU Magma.plist */; };
+		9916E8F51F27520000B9A3E4 /* PPU Plasma.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9916E8F11F27520000B9A3E4 /* PPU Plasma.plist */; };
+		9916E8F61F27520000B9A3E4 /* PPU Viridis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9916E8F21F27520000B9A3E4 /* PPU Viridis.plist */; };
 		991B8B5C1BB8B279006AF439 /* O2HMigrationAssistant.png in Resources */ = {isa = PBXBuildFile; fileRef = 991B8B5B1BB8B279006AF439 /* O2HMigrationAssistant.png */; };
 		992DD75E1BCB095700369C09 /* libgdcmcharls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DD7501BCB095700369C09 /* libgdcmcharls.a */; };
 		992DD7601BCB095700369C09 /* libgdcmCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DD7511BCB095700369C09 /* libgdcmCommon.a */; };
@@ -4039,6 +4043,10 @@
 		84E191F91369966A008DCFC8 /* WADODownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADODownload.h; sourceTree = "<group>"; };
 		84E191FA1369966A008DCFC8 /* WADODownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADODownload.m; sourceTree = "<group>"; };
 		953DA3D517A1D194000C4BAC /* WebPortalDB 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WebPortalDB 8.xcdatamodel"; sourceTree = "<group>"; };
+		9916E8EF1F27520000B9A3E4 /* PPU Inferno.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PPU Inferno.plist"; sourceTree = "<group>"; };
+		9916E8F01F27520000B9A3E4 /* PPU Magma.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PPU Magma.plist"; sourceTree = "<group>"; };
+		9916E8F11F27520000B9A3E4 /* PPU Plasma.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PPU Plasma.plist"; sourceTree = "<group>"; };
+		9916E8F21F27520000B9A3E4 /* PPU Viridis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PPU Viridis.plist"; sourceTree = "<group>"; };
 		991B8B5B1BB8B279006AF439 /* O2HMigrationAssistant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O2HMigrationAssistant.png; sourceTree = "<group>"; };
 		992DD7501BCB095700369C09 /* libgdcmcharls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdcmcharls.a; sourceTree = "<group>"; };
 		992DD7511BCB095700369C09 /* libgdcmCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdcmCommon.a; sourceTree = "<group>"; };
@@ -6425,6 +6433,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9916E8EF1F27520000B9A3E4 /* PPU Inferno.plist */,
+				9916E8F01F27520000B9A3E4 /* PPU Magma.plist */,
+				9916E8F11F27520000B9A3E4 /* PPU Plasma.plist */,
+				9916E8F21F27520000B9A3E4 /* PPU Viridis.plist */,
 				71EB83D216DD0F1800D48646 /* dicom3tools-libsrc-standard-strval-base.tpl */,
 				71EB83D316DD0F1800D48646 /* osirix-complementary.tpl */,
 				59D9471C125333640095680D /* SWFInit.as */,
@@ -11220,6 +11232,7 @@
 				CE1E7F5D07E2DD0D00A85908 /* DatabaseWindow.icns in Resources */,
 				CE4E00BF0830B72F008DAFAE /* Revert.tif in Resources */,
 				CE1D97D00883B661005A3A22 /* FlyThru.pdf in Resources */,
+				9916E8F41F27520000B9A3E4 /* PPU Magma.plist in Resources */,
 				A9B411B70890492F00913770 /* small_album.tif in Resources */,
 				A9B411B80890492F00913770 /* small_smartAlbum.tif in Resources */,
 				A9B411EF0890498600913770 /* small_sharedAlbum.tif in Resources */,
@@ -11307,6 +11320,7 @@
 				AB3674AF0BE0CEB1003634E6 /* HUDCheckboxOffN.tif in Resources */,
 				AB3674B00BE0CEB1003634E6 /* HUDCheckboxOffP.tif in Resources */,
 				AB3674B10BE0CEB1003634E6 /* HUDCheckboxOnN.tif in Resources */,
+				9916E8F31F27520000B9A3E4 /* PPU Inferno.plist in Resources */,
 				AB3674B20BE0CEB1003634E6 /* HUDCheckboxOnP.tif in Resources */,
 				AB3674B30BE0CEB1003634E6 /* HUDCloseButton.tif in Resources */,
 				AB3674B40BE0CEB1003634E6 /* HUDPopUpFillN.tif in Resources */,
@@ -11351,6 +11365,7 @@
 				CE3F99500C84724B00CB38F1 /* Splash.xib in Resources */,
 				CE3F99510C84724B00CB38F1 /* ROI.xib in Resources */,
 				CE3F99520C84724B00CB38F1 /* CalciumScoring.xib in Resources */,
+				9916E8F51F27520000B9A3E4 /* PPU Plasma.plist in Resources */,
 				CE3F99530C84724B00CB38F1 /* ROIManager.xib in Resources */,
 				CE3F99540C84724B00CB38F1 /* Send.xib in Resources */,
 				CE3F99550C84724B00CB38F1 /* OrthogonalMPR.xib in Resources */,
@@ -11389,6 +11404,7 @@
 				ABE0D6A80CDB1B9E00F0494B /* style.css in Resources */,
 				CEDEF7D60D020E9100CADB15 /* TIFFSmall.tif in Resources */,
 				CEDEF7D70D020E9100CADB15 /* MailSmall.tif in Resources */,
+				9916E8F61F27520000B9A3E4 /* PPU Viridis.plist in Resources */,
 				CEDEF7D80D020E9100CADB15 /* JPEGSmall.tif in Resources */,
 				AB7824680D3BACC700460DCE /* WebServicesHTML in Resources */,
 				A9897D9B0D4A142200BAC447 /* displayRGB.tif in Resources */,
